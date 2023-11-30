@@ -19,16 +19,6 @@ function Card() {
         day: 0
     })
 
-    const validateRegex = (name, value, regex) => {
-        if (!regex.test(value)) {
-            setError(prev => ({ ...prev, [name]: true }))
-        }
-        else {
-            setError(prev => ({ ...prev, [name]: false }))
-            setResultTime((prev) => ({ ...prev, [name]: Number(value) }));
-        }
-    }
-
 
 
     const isYear = new Date(resultTime.year, resultTime.month, resultTime.day)
@@ -41,11 +31,16 @@ function Card() {
         const m = inTime.getUTCMonth() - isYear.getUTCMonth() + 1
         const d = inTime.getUTCDate() - isYear.getUTCDate() + 1
         if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
-            setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
-        }
+            if (error.day === false && error.month === false && error.year === false) {
 
+                setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
+
+            } else {
+                console.log(error)
+            }
+        }
     }
-    console.log(inTime.getUTCFullYear())
+    console.log(error)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -91,7 +86,7 @@ function Card() {
             </form>
             <div>{startTime.year === 0 ? "--" : startTime.year}</div>
             <div>{startTime.month === 0 ? "--" : startTime.month}</div>
-            <div>{startTime.day === 0 ? "--" : startTime.day}</div>
+            <div>{startTime.day === 0 ? "--" : startTime.day === 0 ? startTime.day + 1 : startTime.day}</div>
         </div>
     )
 }
