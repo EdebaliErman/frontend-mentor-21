@@ -21,7 +21,11 @@ function Card() {
         const m = inTime.getMonth() - (isYear.getMonth() - 1)
         const d = inTime.getDate() - isYear.getDate()
         setStartTime(prev => ({ ...prev, year: y, month: m, day: d }))
-        console.log(`Yıl: ${y}, Ay: ${m}, Gün: ${d}`);
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setResultTime(prev => ({ ...prev, [name]: Number(value) }))
     }
 
     return (
@@ -30,20 +34,20 @@ function Card() {
                 <button>handle</button>
                 <div>
                     <label>Day</label>
-                    <input type='text' onChange={e => setResultTime(prev=>({...prev, day: e.target.value }))} />
+                    <input type='text' onChange={handleChange} />
                 </div>
                 <div>
                     <label>Month</label>
-                    <input type='text' onChange={e => setResultTime(prev=>({...prev, day: e.target.value }))} />
+                    <input type='text' onChange={handleChange} />
                 </div>
                 <div>
                     <label>year</label>
-                    <input type='text' onChange={e => setResultTime(prev=>({...prev, day: e.target.value }))} />
+                    <input type='text' onChange={handleChange} />
                 </div>
             </form>
-            {startTime.day}
-            {startTime.year}
-            {startTime.month}
+            {startTime.day === 0 ? "-" : startTime.day} <br></br>
+            {startTime.month === 0 ? "-" : startTime.month} <br></br>
+            {startTime.year === 0 ? "-" : startTime.year} <br></br>
         </div>
     )
 }
