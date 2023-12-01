@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import "../Style/Card.css"
 import { icon } from '../icons/icon-arrow'
@@ -25,9 +25,7 @@ function Card() {
         day: undefined
     })
 
-    useEffect(() => {
-
-    }, [startTime.day, startTime.month, startTime.year])
+ 
 
     const isYear = new Date(resultTime.year, resultTime.month, resultTime.day)
     const inTime = new Date()
@@ -43,6 +41,8 @@ function Card() {
             } else {
                 console.log(error)
             }
+        }else if(startTime.day === undefined || startTime.month === undefined || startTime.year === undefined){
+            setUnError((prev) => ({ ...prev, year: true, month: true, day: true }));
         }
 
 
