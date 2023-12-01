@@ -2,7 +2,7 @@
 
 @layer components {
     .Card {
-        @apply shadow-2xl p-9 py-32 px-16 bg-White font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem] md:p-4 md:justify-start md:items-start md:w-[340px] md:h-[400px] md:rounded-br-[8rem]
+        @apply shadow-2xl p-9 py-32 px-16 bg-White font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem] md:p-4 md:justify-start md:items-start md:w-[340px] md:h-[480px] md:rounded-br-[8rem]
     }
 
     .Card form {
