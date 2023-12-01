@@ -2,10 +2,10 @@
 
 @layer components {
     .Card {
-        @apply shadow-2xl p-9 px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem]
+        @apply shadow-2xl p-9 py-32  px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem]
     }
     .Card form {
-        @apply relative mt-[-6rem] w-full flex justify-start items-start flex-col p-8
+        @apply relative mt-[-10rem] w-full flex justify-start items-start flex-col p-8
     }
     .Card form .box {
         @apply text-xl text-Offblack flex justify-center items-center gap-12 mb-6
