@@ -38,7 +38,9 @@ function Card() {
         console.log(isYear.getUTCFullYear())
         if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
             if (error.day === false && error.month === false && error.year === false) {
-                setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
+                if (resultTime.day !== undefined || resultTime.month !== undefined || resultTime.year !== undefined){
+                    setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
+                }
             } else {
                 console.log(error)
             }
