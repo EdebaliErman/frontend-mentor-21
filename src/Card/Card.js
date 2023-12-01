@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import "../Style/Card.css"
+import { icon } from '../icons/icon-arrow'
 
 function Card() {
     const [error, setError] = useState({
@@ -32,9 +34,7 @@ function Card() {
         const d = inTime.getUTCDate() - isYear.getUTCDate() + 1
         if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
             if (error.day === false && error.month === false && error.year === false) {
-
                 setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
-
             } else {
                 console.log(error)
             }
@@ -59,34 +59,41 @@ function Card() {
     }
 
     return (
-        <div>
+        <div className='Card'>
             <form onSubmit={handleSubmit}>
-                <button>handle</button>
-                <div className={error.year ? "text-red-600" : "text-black"}>
-                    <label>year</label>
-                    <input
-                        type='text'
-                        name="year"
-                        onChange={handleChange} />
+                <div className='box'>
+                    <div className={error.day ? "text-red-600" : "inputBox"}>
+                        <label>day</label>
+                        <input
+                            type='text'
+                            placeholder='DD'
+                            name="day"
+                            onChange={handleChange} />
+                    </div>
+                    <div className={error.month ? "text-red-600" : "inputBox"}>
+                        <label>Month</label>
+                        <input
+                            type='text'
+                            name="month"
+                            placeholder='MM'
+                            onChange={handleChange} />
+                    </div>
+                    <div className={error.year ? "text-red-600" : "inputBox"}>
+                        <label>year</label>
+                        <input
+                            type='text'
+                            name="year"
+                            placeholder='YYYY'
+                            onChange={handleChange} />
+                    </div>
                 </div>
-                <div className={error.month ? "text-red-600" : "text-black"}>
-                    <label>Month</label>
-                    <input
-                        type='text'
-                        name="month"
-                        onChange={handleChange} />
-                </div>
-                <div className={error.day ? "text-red-600" : "text-black"}>
-                    <label>day</label>
-                    <input
-                        type='text'
-                        name="day"
-                        onChange={handleChange} />
-                </div>
+                <div className='button-box'><hr /><button>{icon}</button></div>
             </form>
-            <div>{startTime.year === 0 ? "--" : startTime.year}</div>
-            <div>{startTime.month === 0 ? "--" : startTime.month}</div>
-            <div>{startTime.day === 0 ? "--" : startTime.day === 0 ? startTime.day + 1 : startTime.day}</div>
+            <footer>
+                <div>{startTime.year === 0 ? <span>--</span> : <span>{startTime.year}</span>} year</div>
+                <div>{startTime.month === 0 ? <span>--</span> : <span>{startTime.month}</span>} month</div>
+                <div>{startTime.day === 0 ? <span>--</span> : <span>{startTime.day === 0 ? startTime.day + 1 : startTime.day * -1}</span>} day</div>
+            </footer>
         </div>
     )
 }

@@ -1,0 +1,34 @@
+@tailwind components;
+
+@layer components {
+    .Card {
+        @apply shadow-2xl p-9 px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem]
+    }
+    .Card form {
+        @apply relative mt-[-6rem] w-full flex justify-start items-start flex-col p-8
+    }
+    .Card form .box {
+        @apply text-xl text-Offblack flex justify-center items-center gap-12 mb-6
+    }
+.button-box{
+    @apply w-full mt-[-2rem] 
+}
+    .Card form .inputBox {
+        @apply flex flex-col  my-12
+    }
+    .Card form .inputBox label {
+        @apply uppercase text-Smokeygrey font-extrabold tracking-[0.2rem] font-sans text-lg py-3
+    }
+    .Card form .inputBox input {
+        @apply p-4 text-3xl text-start border-Lightgrey border-[1px] rounded-lg w-36 font-bold  text-Offblack font-sans
+    }
+    .Card form button {
+        @apply bg-Purple p-3 rounded-full absolute right-0 bottom-0 hover:bg-Offblack
+    }
+    .Card footer {
+        @apply flex  justify-start items-start flex-col gap-4 text-left text-7xl my-4 font-popins italic font-black px-8
+    }
+    .Card footer span {
+        @apply text-Purple  font-popins font-black italic
+    }
+}
