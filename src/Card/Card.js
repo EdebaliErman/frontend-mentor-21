@@ -25,23 +25,24 @@ function Card() {
         day: undefined
     })
 
- 
+
 
     const isYear = new Date(resultTime.year, resultTime.month, resultTime.day)
     const inTime = new Date()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const y = inTime.getUTCFullYear() - isYear.getUTCFullYear()
+        const y = inTime.getUTCFullYear() - resultTime.year
         const m = inTime.getUTCMonth() - isYear.getUTCMonth() + 1
         const d = inTime.getUTCDate() - isYear.getUTCDate() + 1
+        console.log(isYear.getUTCFullYear())
         if (!isNaN(y) && !isNaN(m) && !isNaN(d)) {
             if (error.day === false && error.month === false && error.year === false) {
                 setStartTime((prev) => ({ ...prev, year: y, month: m, day: d }));
             } else {
                 console.log(error)
             }
-        }else if(startTime.day === undefined || startTime.month === undefined || startTime.year === undefined){
+        } else if (startTime.day === undefined || startTime.month === undefined || startTime.year === undefined) {
             setUnError((prev) => ({ ...prev, year: true, month: true, day: true }));
         }
 
@@ -51,7 +52,6 @@ function Card() {
     const handleChange = (e) => {
         const { name, value } = e.target
 
-        const valueyear = Number(inTime.getUTCFullYear())
 
         if (name === 'day' && (value < 1 || value > 31)) {
             if (value.length === 0) {
@@ -71,7 +71,7 @@ function Card() {
                 setUnError((prev) => ({ ...prev, month: false }));
                 setError((prev) => ({ ...prev, month: true }));
             }
-        } else if (name === 'year' && (value > valueyear || value < 0 || value === "")) {
+        } else if (name === 'year' && (value > inTime.getUTCFullYear() || value < 0 || value === "")) {
             if (value === "") {
                 setUnError((prev) => ({ ...prev, year: true }));
                 setError((prev) => ({ ...prev, year: false }));
