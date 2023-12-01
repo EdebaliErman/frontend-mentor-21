@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import "../Style/Card.css"
 import { icon } from '../icons/icon-arrow'
@@ -25,14 +25,15 @@ function Card() {
         day: undefined
     })
 
+    useEffect(() => {
 
+    }, [startTime.day, startTime.month, startTime.year])
 
     const isYear = new Date(resultTime.year, resultTime.month, resultTime.day)
     const inTime = new Date()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         const y = inTime.getUTCFullYear() - isYear.getUTCFullYear()
         const m = inTime.getUTCMonth() - isYear.getUTCMonth() + 1
         const d = inTime.getUTCDate() - isYear.getUTCDate() + 1
@@ -43,10 +44,15 @@ function Card() {
                 console.log(error)
             }
         }
+
+
     }
 
     const handleChange = (e) => {
         const { name, value } = e.target
+
+        const valueyear = Number(inTime.getUTCFullYear())
+
         if (name === 'day' && (value < 1 || value > 31)) {
             if (value.length === 0) {
                 setUnError((prev) => ({ ...prev, day: true }));
@@ -65,11 +71,10 @@ function Card() {
                 setUnError((prev) => ({ ...prev, month: false }));
                 setError((prev) => ({ ...prev, month: true }));
             }
-        } else if (name === 'year' && value > inTime.getUTCFullYear()) {
-            if (value === 0) {
+        } else if (name === 'year' && (value > valueyear || value < 0 || value === "")) {
+            if (value === "") {
                 setUnError((prev) => ({ ...prev, year: true }));
                 setError((prev) => ({ ...prev, year: false }));
-                console.log(unError.year)
             }
             else {
                 setUnError((prev) => ({ ...prev, year: false }));
