@@ -2,47 +2,68 @@
 
 @layer components {
     .Card {
-        @apply shadow-2xl p-9 py-32  px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem]
+        @apply shadow-2xl p-9 py-32 px-16 bg-White font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem] md:p-4 md:justify-start md:items-start md:w-[340px] md:h-[400px] md:rounded-br-[8rem]
     }
+
     .Card form {
-        @apply relative mt-[-10rem] w-full flex justify-start items-start flex-col p-8
+        @apply relative mt-[-10rem] w-full flex justify-start items-start flex-col p-8 
+        md:p-0 md:m-0 md:my-3 md:justify-center md:items-center
     }
+
     .Card form .box {
-        @apply text-xl text-Offblack flex justify-center items-center gap-12 mb-6
+        @apply text-xl text-Offblack flex justify-center items-center gap-12 mb-6 md:p-0 md:m-0 md:justify-center md:items-center md:gap-4
     }
-.button-box{
-    @apply w-full mt-[-2rem] 
-}
+
+    .button-box {
+        @apply w-full mt-[-2rem] md:m-10 
+    }
+
     .Card form .inputBox {
-        @apply flex flex-col  my-12
+        @apply flex flex-col my-12 md:m-0
     }
+
     .Card form .inputBox label {
-        @apply uppercase text-Smokeygrey font-extrabold tracking-[0.2rem] font-sans text-sm py-3
+        @apply uppercase text-Smokeygrey font-extrabold tracking-[0.2rem] font-sans text-sm py-3 md:text-[12px] md:p-1
     }
+
     .Card form .inputBox input {
-        @apply p-4 text-3xl text-start border-Lightgrey border-[1px] rounded-lg w-36 font-bold  text-Offblack font-sans
+        @apply p-4 text-3xl text-start border-Lightgrey border-[1px] rounded-lg w-36 font-bold text-Offblack font-sans md:text-xl md:p-3 md:w-20
     }
+
     .Card form .errorBox {
-        @apply flex flex-col  my-12 relative
+        @apply flex flex-col my-12 relative md:m-0
     }
-    .errortext{
-        @apply text-xs  absolute top-32 italic font-medium font-sans  text-Lightred
-    } .errorUntext{
-        @apply text-xs  absolute top-32 italic font-medium font-sans  text-Lightred
+
+    .errortext {
+        @apply text-xs absolute top-32 italic font-medium font-sans text-Lightred md:top-[84px] md:text-[10px]
     }
+
+    .errorUntext {
+        @apply text-xs absolute top-32 italic font-medium font-sans text-Lightred
+    }
+
     .Card form .errorBox label {
-        @apply uppercase text-Lightred font-extrabold tracking-[0.2rem] font-sans text-sm py-3
+        @apply uppercase text-Lightred font-extrabold tracking-[0.2rem] font-sans text-sm py-3 md:text-[12px] md:p-1
     }
+
     .Card form .errorBox input {
-        @apply p-4 text-3xl text-start border-Lightred border-[1px] rounded-lg w-36 font-bold   font-sans
+        @apply p-4 text-3xl text-start border-Lightred border-[1px] rounded-lg w-36 font-bold font-sans 
+        md:text-lg md:p-3 md:w-20
     }
+
     .Card form button {
-        @apply bg-Purple p-3 rounded-full absolute right-0 bottom-0 hover:bg-Offblack
+        @apply bg-Purple p-3 rounded-full absolute right-0 bottom-0 hover:bg-Offblack 
+        md:bottom-2 md:right-32 md:m-0 md:p-4
+    }
+    button svg{
+        @apply w-6 h-6
     }
     .Card footer {
-        @apply flex  justify-start items-start flex-col gap-4 text-left text-8xl my-4 font-popins italic font-black px-8
+        @apply flex justify-start items-start flex-col gap-4 text-left text-8xl my-4 font-popins italic font-black px-8 
+        md:text-[45px]
     }
+
     .Card footer span {
-        @apply text-Purple  font-popins font-black italic
+        @apply text-Purple font-popins font-black italic
     }
 }

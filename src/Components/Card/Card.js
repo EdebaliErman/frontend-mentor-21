@@ -81,9 +81,9 @@ function Card() {
                 <div className='button-box'><hr /><button>{icon}</button></div>
             </form>
             <footer>
-                <div>{startTime.year === undefined ? <span>--</span> : <span>{startTime.year}</span>} year</div>
-                <div>{startTime.month === undefined ? <span>--</span> : <span>{startTime.month}</span>} month</div>
-                <div>{startTime.day === undefined ? <span>--</span> : <span>{startTime.day === 0 ? startTime.day + 1 : startTime.day * -1}</span>} day</div>
+                <div>{startTime.year === undefined ? <span>--</span> : <span>{startTime.year}</span>} years</div>
+                <div>{startTime.month === undefined ? <span>--</span> : <span>{startTime.month}</span>} months</div>
+                <div>{startTime.day === undefined ? <span>--</span> : <span>{startTime.day === 0 ? startTime.day + 1 : startTime.day * -1}</span>} days</div>
             </footer>
         </div>
     )
