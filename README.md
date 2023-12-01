@@ -6,7 +6,7 @@
 
 # Mobil
 
-<img src="public/Assets/mobil.png" alt="no.png">
+<img src="public/Assets/mobile.png" alt="no.png">
 
 # Front-end Style Guide
 
