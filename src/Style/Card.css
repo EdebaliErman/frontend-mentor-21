@@ -40,7 +40,7 @@
         @apply bg-Purple p-3 rounded-full absolute right-0 bottom-0 hover:bg-Offblack
     }
     .Card footer {
-        @apply flex  justify-start items-start flex-col gap-4 text-left text-7xl my-4 font-popins italic font-black px-8
+        @apply flex  justify-start items-start flex-col gap-4 text-left text-8xl my-4 font-popins italic font-black px-8
     }
     .Card footer span {
         @apply text-Purple  font-popins font-black italic

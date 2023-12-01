@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import "../Style/Card.css"
-import { icon } from '../icons/icon-arrow'
-import { handleChange, handleSubmit } from '../Hook/hook'
+import "../../Style/Card.css"
+import { icon } from '../../icons/icon-arrow'
+import { handleChange, handleSubmit } from '../../Hook/hook'
 
 function Card() {
     const [error, setError] = useState({
@@ -36,8 +36,7 @@ function Card() {
     return (
         <div className='Card'>
             <form
-                onSubmit={
-                    e => handleSubmit(
+                onSubmit={e => handleSubmit(
                         e,
                         error,
                         resultTime,
@@ -57,7 +56,6 @@ function Card() {
                             onChange={e=>handleChange(e,setUnError,setError,setResultTime,inTime)} />
                         <h4 className='errortext'>{error.day ? "Must be a valid day" : ""}</h4>
                         <h4 className='errortext'>{unError.day ? "This field is required" : ""}</h4>
-
                     </div>
                     <div className={error.month || unError.month ? "errorBox" : "inputBox"}>
                         <label>Month</label>
