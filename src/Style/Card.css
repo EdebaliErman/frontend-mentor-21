@@ -2,7 +2,7 @@
 
 @layer components {
     .Card {
-        @apply shadow-2xl p-9 px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem]
+        @apply shadow-2xl p-9 px-16 bg-White  font-popins flex justify-start items-start flex-col rounded-xl w-[52rem] rounded-br-[15rem]
     }
     .Card form {
         @apply relative mt-[-6rem] w-full flex justify-start items-start flex-col p-8
@@ -17,10 +17,24 @@
         @apply flex flex-col  my-12
     }
     .Card form .inputBox label {
-        @apply uppercase text-Smokeygrey font-extrabold tracking-[0.2rem] font-sans text-lg py-3
+        @apply uppercase text-Smokeygrey font-extrabold tracking-[0.2rem] font-sans text-sm py-3
     }
     .Card form .inputBox input {
         @apply p-4 text-3xl text-start border-Lightgrey border-[1px] rounded-lg w-36 font-bold  text-Offblack font-sans
+    }
+    .Card form .errorBox {
+        @apply flex flex-col  my-12 relative
+    }
+    .errortext{
+        @apply text-xs  absolute top-32 italic font-medium font-sans  text-Lightred
+    } .errorUntext{
+        @apply text-xs  absolute top-32 italic font-medium font-sans  text-Lightred
+    }
+    .Card form .errorBox label {
+        @apply uppercase text-Lightred font-extrabold tracking-[0.2rem] font-sans text-sm py-3
+    }
+    .Card form .errorBox input {
+        @apply p-4 text-3xl text-start border-Lightred border-[1px] rounded-lg w-36 font-bold   font-sans
     }
     .Card form button {
         @apply bg-Purple p-3 rounded-full absolute right-0 bottom-0 hover:bg-Offblack
